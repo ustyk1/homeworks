@@ -1,0 +1,53 @@
+@use '../../../../assets/variables/variables.scss' as vars;
+
+.graph {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto; 
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  .item {
+    &__name {
+      min-width: 150px;
+      text-align: right;
+      padding: 3px 10px;
+    }
+
+    &__range {
+      position: relative;
+      flex: 1;
+      display: inline-block;
+      width: auto;
+      height: 20px;
+      background-color: vars.$color-violet-500;
+
+      &::before {
+        content: attr(data-popularity);
+        position: absolute;
+        left: 5px;
+        width: 25px;
+        vertical-align: middle;
+        line-height: 20px;
+        font-size: 0.8rem;
+        color: vars.$color-violet-50;
+      }
+
+      &.lowRange {
+        background-color: vars.$color-violet-300;
+        &::before {
+          color: vars.$color-violet-300;
+          left: auto;
+          right: -30px;
+        }
+      }
+
+      &.highRange {
+        background-color: vars.$color-violet-700;
+      }
+    }
+  }
+}

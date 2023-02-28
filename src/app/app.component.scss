@@ -1,0 +1,14 @@
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex; 
+  position: relative;
+  // border: 1px solid red;
+
+  .container {
+    flex: 1;
+  }
+}

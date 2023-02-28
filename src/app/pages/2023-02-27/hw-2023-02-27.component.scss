@@ -1,0 +1,15 @@
+@use '../../../assets/variables/variables.scss' as vars;
+
+.hw-2023-02-27 {
+  box-sizing: border-box;
+  padding: 20px;
+  color: vars.$color-slate-700;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__task {
+    margin-bottom: 20px;
+  }
+}

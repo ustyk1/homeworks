@@ -1,0 +1,9 @@
+<!-- <p>side-bar works!</p> -->
+<aside>
+  <div class="side-bar">
+    <h2 class="side-bar__title">{{title}}</h2>
+    <ul  class="side-bar__link-list">
+      <app-link-item *ngFor="let linkItem of linkItems; trackBy: trackByMethod" [linkItem]="linkItem"></app-link-item>
+    </ul>
+  </div>
+</aside>

@@ -1,0 +1,28 @@
+@use '../../assets/variables/variables.scss' as vars;
+
+:host {
+  height: 100%;
+}
+
+.side-bar {
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: vars.$color-slate-100;
+  box-shadow: 5px -6px 8px vars.$color-slate-300;
+  font-size: 1.3rem;
+  color: vars.$color-slate-700;
+
+  &__title {
+    padding: 0 0 30px 0;
+    margin: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid vars.$color-slate-700;
+  }
+
+  &__link-list {
+    display: flex;
+    flex-direction: column;
+  }
+}

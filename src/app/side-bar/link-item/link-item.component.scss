@@ -1,0 +1,21 @@
+@use '../../../assets/variables/variables.scss' as vars;
+
+.active {
+  background-color: vars.$color-sky-900;
+}
+
+.link-item {
+  a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer; 
+
+    &.active {
+      transition: all 0.3s linear;
+      color: vars.$color-slate-50;
+    }
+  }
+}

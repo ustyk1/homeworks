@@ -1,0 +1,14 @@
+<div class="graph">
+  <ul>
+    <li class="graph__item item" *ngFor="let item of graphItems">
+      <span class="item__name">{{item.language}}</span>
+      <span 
+        class="item__range" 
+        [style.flex]="item.popularity / 100 * 5" 
+        [attr.data-popularity]="item.popularity"
+        [ngClass]="{'highRange': item.popularity > 15,
+                    'lowRange': item.popularity < 1}"  
+      ></span>
+    </li>
+  </ul>
+</div>
