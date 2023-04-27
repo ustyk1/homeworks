@@ -10,7 +10,7 @@ interface ILinkItem {
   templateUrl: './hw-2023-02-27.component.html',
   styleUrls: ['./hw-2023-02-27.component.scss']
 })
-export class Hw20230227Component implements OnInit {
+export class Hw_2023_02_27_Component implements OnInit {
   public task: string = 'Вивести рейтинг мов програмування по типу картинки вгорі. Звернути увагу на кольори мов, які не мають 1-го процента.'
 
   public routerLink: ILinkItem = {

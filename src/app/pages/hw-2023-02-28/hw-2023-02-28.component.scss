@@ -1,0 +1,11 @@
+@use '../../../assets/variables/variables.scss' as vars;
+
+.hw-2023-02-28 {
+  padding: 20px;
+  color: vars.$color-slate-700;
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  } 
+}

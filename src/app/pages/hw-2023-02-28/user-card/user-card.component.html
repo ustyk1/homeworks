@@ -1,0 +1,18 @@
+<div class="user-card-container">
+    <div  class="user-card" *ngFor="let user of users; let i = index">
+      <div class="user-card__wrapper">
+        <div class="user-card__photo-wrapper">
+          <img src="https://randomuser.me/api/portraits/women/{{i + 64}}.jpg" alt="Photo">
+        </div>
+        <ul class="user-card__data data">
+          <li><b>Name:</b> {{user.name}}</li>
+          <li><b>Email:</b> {{user.email}}</li>
+          <li><b>Address:</b> {{user.address.street}}</li>
+          <li><b>Phone:</b> {{user.phone}}</li>
+          <li><b>Website:</b><a href="#" class="data__link"> {{user.website}}</a>
+          </li>
+          <li><b>Company name:</b> {{user.company.name}}</li>
+        </ul>
+      </div>
+    </div>
+</div>
