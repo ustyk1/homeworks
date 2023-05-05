@@ -108,8 +108,8 @@
         <label for="confirm-password">Сonfirm password</label>
         <div 
           class="error-box" 
-          *ngIf="form.get('password')?.get('confirmPasswordValue')?.invalid && 
-          form.get('password')?.get('confirmPasswordValue')?.touched && form.get('password')?.errors" 
+          *ngIf="(form.get('password')?.get('confirmPasswordValue')?.invalid && 
+          form.get('password')?.get('confirmPasswordValue')?.touched) || (form.get('password')?.errors && form.get('password')?.get('confirmPasswordValue')?.touched)" 
         >
           <small *ngIf="form.get('password')?.get('confirmPasswordValue')?.errors?.['required']">The field must be filled!</small>
           <small *ngIf="form.get('password')?.errors?.['matchPassword']">Password not confirmed!!</small>
@@ -118,7 +118,8 @@
     </div>
     <!-- <div><input type="checkbox" name="" id=""> I agree to the terms & conditions.</div> -->
     <button type="submit" class="submit-btn button" [disabled]="form.pristine || form.invalid || isSignedUp">Sign Up</button>
-    <p class="error-box"><small *ngIf="isSignedUp">The account is already signed up! Please, SIGN IN!</small></p>
+    <div class="error-box"><small *ngIf="isSignedUp">The account is already signed up! Please, SIGN IN!</small></div>
+    <div class="success-box"><small *ngIf="!isSignedUp && !isInitial">The account successfully registered!</small></div>
   </form>
   <div class="link-box">
     Already have an account? <a class="link" [routerLink]="['../sign-in']">Sign In</a>

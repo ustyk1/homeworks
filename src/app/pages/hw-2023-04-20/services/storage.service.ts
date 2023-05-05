@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 export interface INewUser {
   id: string,
-  currentUser: string,
   firstName: string,
   lastName: string,
   email: string,

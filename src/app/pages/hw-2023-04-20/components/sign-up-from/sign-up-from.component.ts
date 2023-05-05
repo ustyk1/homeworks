@@ -17,8 +17,9 @@ export interface IFormData {
   styleUrls: ['../../common/common-styles.scss', './sign-up-from.component.scss']
 })
 export class SignUpFromComponent implements OnInit {
-
+  
   isSignedUp = false;
+  isInitial = true;
 
   form = this.fb.group({
     firstName: ['', [
@@ -75,7 +76,6 @@ export class SignUpFromComponent implements OnInit {
   
       const user = {
         id: formData.email,
-        currentUser: formData.email,
         firstName, 
         lastName,
         email,
@@ -85,6 +85,8 @@ export class SignUpFromComponent implements OnInit {
       } 
       
       this.storage.create(user);
+      this._resetForm();
+      this.isInitial = false;
     } else {
       this._resetForm();
     }

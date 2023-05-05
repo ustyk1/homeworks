@@ -141,3 +141,19 @@
   right: 0;
   width: 45px;
 }
+
+.control-btn {
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 7px;
+  border: 2px solid rgba(255, 255, 255, .5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, .5);  
+  background-color: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 38px;
+  font-weight: 600;
+  color: #fff;
+}
