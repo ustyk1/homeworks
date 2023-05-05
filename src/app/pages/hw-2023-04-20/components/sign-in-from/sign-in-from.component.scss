@@ -1,0 +1,24 @@
+.sign-in {
+  &__form {
+    position: relative;
+  
+    .input-box {
+      .icon {
+        &_login {
+          background-image: url('../../assets/svg/person.svg');
+        }
+        &_password {
+          background-image: url('../../assets/svg/lock-closed.svg');
+        }
+      }
+    }
+  
+    .link-box {
+      &_forgot-password {
+        margin: -5px 0 15px;
+        text-align: right;
+        font-size: 14px;
+      }
+    }
+  }
+}

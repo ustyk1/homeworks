@@ -1,0 +1,27 @@
+.sign-up {
+  &__form {
+    position: relative;
+  
+    .input-box {
+      .icon {
+        &_user {
+          background-image: url('../../assets/svg/person.svg');
+        }
+        &_email {
+          background-image: url('../../assets/svg/mail.svg');
+        }
+        &_key {
+          background-image: url('../../assets/svg/key.svg');
+        }
+        &_password {
+          background-image: url('../../assets/svg/lock-closed.svg');
+        }
+      }
+    }
+
+    & > .error-box {
+      color: red;
+      text-align: center;
+    }
+  }
+}

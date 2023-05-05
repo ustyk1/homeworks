@@ -21,6 +21,10 @@ export class SideBarComponent implements OnInit {
     {
       path: 'hw-2023-02-28',
       text: 'hw-2023-02-28'
+    },
+    {
+      path: 'hw-2023-04-20',
+      text: 'hw-2023-04-20'
     }
   ];
 

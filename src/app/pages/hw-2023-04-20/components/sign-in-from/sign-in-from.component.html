@@ -1,0 +1,36 @@
+<div class="sign-in form-wrap">
+  <button type="button" class="close-btn button"></button>
+  <form action="#" class="sign-in__form form">
+    <h2 class="form__title">Sign in</h2>
+    <div class="input-box">
+      <div class="input-box__icon icon icon_login"></div>
+      <input 
+        required 
+        type="text" 
+        name="login" 
+        id="login" 
+        autocomplete="off"
+      >
+      <label for="login">Login</label>
+    </div>
+    <div class="input-box">
+      <div class="input-box__icon icon icon_password"></div>
+      <input 
+        required 
+        type="password" 
+        name="passwordSignIn" 
+        id="passwordSignIn" 
+        autocomplete="off"
+      >
+      <label for="password">Password</label>
+    </div>
+    <!-- <p>Incorrect login or password!</p> -->
+    <div class="link-box link-box_forgot-password">
+      <a class="link" [routerLink]="['../reset-password']">Forgot password?</a>
+    </div>
+    <button type="submit" class="submit-btn button" disabled>Sign in</button>
+  </form>
+  <div class="link-box">
+    Don`t have an account? <a class="link" [routerLink]="['../sign-up']">Sign up!</a>
+  </div>
+</div>

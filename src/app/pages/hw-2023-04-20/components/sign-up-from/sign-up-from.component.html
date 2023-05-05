@@ -1,0 +1,126 @@
+<div class="sign-up form-wrap">
+  <button type="button" class="close-btn button"></button>
+  <form action="#" class="sign-up__form form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2 class="form__title">Sign up</h2>
+    <div class="input-box">
+      <div class="input-box__icon icon icon_user"></div>
+      <input  
+        type="text" 
+        name="firstName"
+        id="firstName" 
+        autocomplete="off"
+        formControlName="firstName" 
+      >
+      <label for="firstName">First name</label>
+      <!-- <div style="position:absolute; top: 0; right: 0px;"><pre>{{form.get('firstName')?.errors | json}}</pre></div> -->
+      <div 
+        class="error-box" 
+        *ngIf="signUpForm.firstName.invalid && signUpForm.firstName.touched"
+      >
+        <small *ngIf="signUpForm.firstName.errors?.['required']">The field must be filled!</small>
+        <small *ngIf="signUpForm.firstName.errors?.['minlength']">The field must contain more than 1 symbol!</small>
+        <small *ngIf="signUpForm.firstName.errors?.['pattern']">The field must not contain numbers.</small>
+      </div>
+    </div>
+    <div class="input-box">
+      <div class="input-box__icon icon icon_user"></div>
+      <input  
+        type="text" 
+        name="lastName" 
+        id="lastName" 
+        autocomplete="off"
+        formControlName="lastName"
+      >
+      <label for="lastName">Last name</label>
+      <div 
+        class="error-box" 
+        *ngIf="signUpForm.lastName.invalid && signUpForm.lastName.touched"
+      >
+        <small *ngIf="signUpForm.lastName.errors?.['required']">The field must be filled!</small>
+        <small *ngIf="signUpForm.lastName.errors?.['minlength']">The field must contain more than symbol!</small>
+        <small *ngIf="signUpForm.lastName.errors?.['pattern']">The field must not contain numbers.</small>
+      </div>
+    </div>
+    <div class="input-box">
+      <div class="input-box__icon icon icon_email"></div>
+      <input 
+        type="text" 
+        name="email" 
+        id="email" 
+        autocomplete="off"
+        formControlName="email"
+      >
+      <label for="email">Email</label>
+      <div 
+        class="error-box" 
+        *ngIf="signUpForm.email.invalid && signUpForm.email.touched"
+      >
+        <small *ngIf="signUpForm.email.errors?.['required']">The field must be filled!</small>
+        <small *ngIf="signUpForm.email.errors?.['pattern']">The email is invalid.</small>
+      </div>
+    </div>
+    <div class="input-box">
+      <div class="input-box__icon icon icon_key"></div>
+      <input 
+        type="text" 
+        name="secretWord" 
+        id="secretWord" 
+        autocomplete="off"
+        formControlName="secretWord"
+      >
+      <label for="secretWord">Secret word</label>
+      <div 
+        class="error-box" 
+        *ngIf="signUpForm.secretWord.invalid && signUpForm.secretWord.touched"
+      >
+        <small *ngIf="signUpForm.secretWord.errors?.['required']">The field must be filled!</small>
+      </div>
+    </div>
+    <div formGroupName="password">
+      <div class="input-box form-group_password">
+        <div class="input-box__icon icon icon_password"></div>
+        <input 
+          type="password" 
+          name="password" 
+          id="password" 
+          formControlName="passwordValue"
+        >
+        <label for="password">Password</label>
+        <div class="error-box" *ngIf="
+          signUpForm.password.get('passwordValue')?.invalid && 
+          signUpForm.password.get('passwordValue')?.touched"
+        >
+          <small *ngIf="signUpForm.password.get('passwordValue')?.errors?.['required']">The field must be filled!</small>
+          <small *ngIf="signUpForm.password.get('passwordValue')?.errors?.['pattern']">
+            At least 10 characters, both lower (a-z) and upper (A-Z) case letters, special character (!@#$&*) and number!
+          </small>
+        </div>
+      </div>
+      <div class="input-box">
+        <div class="input-box__icon icon icon_password"></div>
+        <input 
+          required 
+          type="password" 
+          name="confirmPassword" 
+          id="confirm-password" 
+          formControlName="confirmPasswordValue"
+        >
+        <label for="confirm-password">Сonfirm password</label>
+        <div 
+          class="error-box" 
+          *ngIf="form.get('password')?.get('confirmPasswordValue')?.invalid && 
+          form.get('password')?.get('confirmPasswordValue')?.touched && form.get('password')?.errors" 
+        >
+          <small *ngIf="form.get('password')?.get('confirmPasswordValue')?.errors?.['required']">The field must be filled!</small>
+          <small *ngIf="form.get('password')?.errors?.['matchPassword']">Password not confirmed!!</small>
+        </div>
+      </div>
+    </div>
+    <!-- <div><input type="checkbox" name="" id=""> I agree to the terms & conditions.</div> -->
+    <button type="submit" class="submit-btn button" [disabled]="form.pristine || form.invalid || isSignedUp">Sign Up</button>
+    <p class="error-box"><small *ngIf="isSignedUp">The account is already signed up! Please, SIGN IN!</small></p>
+  </form>
+  <div class="link-box">
+    Already have an account? <a class="link" [routerLink]="['../sign-in']">Sign In</a>
+  </div>
+</div>
